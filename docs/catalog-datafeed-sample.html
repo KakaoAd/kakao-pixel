@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kakao 픽셀 가이드 - 데이터피드 샘플</title>
+  <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jazzy.js" defer></script>
+  
+  <script src="js/lunr.min.js" defer></script>
+  <script src="js/typeahead.jquery.js" defer></script>
+  <script src="js/jazzy.search.js" defer></script>
+  <script src="js/underscore-min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-col header-col--primary">
+    <a class="header-link" href="index.html">
+      카카오 픽셀 가이드
+    </a>
+  </p>
+</header>
+
+<p class="breadcrumbs">
+  <span class="doc_title">현재 페이지</span> 
+  <img class="carat" src="img/carat.png" />
+  <span class="doc_title">데이터피드 샘플</span> 
+</p>
+
+<div class="content-wrapper">
+  <nav class="navigation">
+    <ul class="nav-groups">
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="Documentation.html">Documentation</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="get-track-id.html">Get Track ID</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="pixel-guide.html">Pixel Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-page-view-event.html">Page View Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-complete-register-event.html">Send Complete Register Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-search-event.html">Send Search Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-content-event.html">Send View Content Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-cart-event.html">Send Add To Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-wishlist-event.html">Send Add To Wishlist Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-cart-event.html">Send View Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-purchase-event.html">Send Purchase Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-participation-event.html">Send Participation Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-signup-event.html">Send SignUp Event</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="catalog.html">Catalog Setting</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-guide.html">Catalog Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-datafeed-sample.html">Datafeed Sample</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>  <article class="main-content">
+
+    <section class="section">
+      <div class="section-content">
+        
+        <h1 id='strong-kakaoad-sdk-strong' class='heading'><strong>데이터피드 샘플</strong></h1>
+
+<blockquote>
+<p>이 가이드는 카탈로그 소재 정보 제공을 데이터피드로 설정하는 가이드를 제공합니다. </p>
+</blockquote>
+
+<h2 class='heading'>예시</h2>
+<pre class="highlight javascript"><code><xmp><?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+<channel>
+    <title>My Deal Shop Products</title>
+    <link>https://www.mydealsshop.foo</link>
+    <description>Product Feed for Kakao</description>
+     
+ 
+        <item>
+            <g:item_group_id>SKU-123123</g:item_group_id>
+            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>           
+            <g:id>SKU-123123-RED</g:id>
+            <g:title>WidgetThing</title>           
+            <g:description>This product is the product you need to do the thing</description>
+            <g:link>https://www.mydealsshop.foo/products/widgetthing</link>
+            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link> 
+            
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>           
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image3.jpg</additional_image_link>      
+                             
+            <g:brand>AcmeCo</g:brand>
+            <g:condition>New</g:condition> 
+          
+            <g:availability>in stock</g:availability>
+            
+            <g:price>19.99 USD</g:price>
+            <g:sale_price>9.99 USD</g:sale_price>   
+        </item> 
+ 
+        <item>
+            <g:item_group_id>SKU-123123</g:item_group_id>
+            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>           
+            <g:id>SKU-123123-GREEN</g:id>
+            <g:title>WidgetThing</title>           
+            <g:description>This product is the product you need to do the thing</description>
+            <g:link>https://www.mydealsshop.foo/products/widgetthing</link>
+            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link> 
+             
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>           
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image3.jpg</additional_image_link>
+                     
+            <g:brand>AcmeCo</g:brand>
+            <g:condition>New</g:condition> 
+           
+            <g:availability>in stock</g:availability>
+             
+            <g:price>19.99 USD</g:price>
+            <g:sale_price>9.99 USD</g:sale_price>      
+        </item>  
+ 
+</channel>
+</rss></xmp></code></pre>
+
+<h2 class='heading'>제공하는 상품 속성</h2>
+
+<table class="confluenceTable"><colgroup><col style="width: 215.0px;"/><col style="width: 847.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><span style="color: rgb(75,79,86);">속성과 타입</span></th><th class="confluenceTh"><span style="color: rgb(75,79,86);">설명</span></th></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>id</code></span></p><p>Type: string</p></td><td><p>필수</p><p>Max character limit: 100</p><p>상품 고유 ID 이다. pixel&amp;SDK 의 content ID 와 일치해야 한다.</p><p>Example: Kakao<code>_tshirt_001</code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>title</code></span></p><p>Type: string</p></td><td><p>필수</p><p>Max character limit: 225</p><p>상품 타이틀이다.</p><p>Example: <code>Blue Kakao T-Shirt (Unisex)</code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>description</code></span></p><p>type: string</p></td><td><p>선택</p><p>Max character limit: 500</p><p>상품 설명이다.</p><p>Example: A vibrant crewneck for all shapes and sizes. Made from 100% cotton.</p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>availability</code></span></p><p>Type: string</p></td><td><p>선택</p><p>상품 가용성이다. 아래의 값 중에 하나를 따라야한다. (제약으로 막고있지는 않음)</p><ul><li><p><code>in stock</code> - 즉시 배송 가능한 상품</p></li><li><p><code>available for order</code> - 배송이 1-2 주 걸리는 상품</p></li><li><p><code>out of stock</code> - 재고가 없는 상품</p></li><li><p><code>discontinued</code> - 더 이상 판매하지 않는 상품</p></li></ul><p>Example: <code>in stock</code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>condition</code></span></p><p>Type: string</p></td><td><p>선택</p><p>상품에 대한 상태이다.</p><p>Supported values: <code>new</code>, <code>refurbished</code>, <code>used</code>. (제약으로 막고있지는 않음)</p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>price</code></span></p><p>type: string</p></td><td><p>선택</p><p>상품 가격과 통화이다. 상품과 갸격 사이에 공백을 두는 3-digit ISO currency code <a href="https://ko.wikipedia.org/wiki/ISO_4217" class="external-link" rel="nofollow">(ISO 4217 standards)</a> 를 따른다. 소수점으로 &quot;.&quot; 을 사용한다. <span style="color: rgb(51,51,51);">소수점 이하 둘째짜리까지</span> 허용한다.</p><p>Example: <code>9.99 USD</code>, <code>25.00 EUR</code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>link</code></span></p><p>Type: string</p></td><td><p>필수</p><p>Max characters: 1000</p><p>상품을 구입할 수 있는 URL 이다.</p><p>Example: <code><a href="https://www.kakao.com/kakao_t_shirt" class="external-link" rel="nofollow">https://www.kakao.com/kakao_t_shirt</a></code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>image_link</code></span></p><p>Type: string</p></td><td><p>필수</p><p>Max characters: 500</p><p>상품 메인 이미지 URL 이다.</p><p>Example: <code><span class="nolink"><a href="https://www.kakao.com/t_shirt_1.jpg" class="external-link" rel="nofollow">https://www.kakao.com/t_shirt_1.jpg</a></span></code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>brand</code></span></p><p>Type: string</p></td><td><p>선택</p><p>Max characters: 50</p><p>브랜드 이름, manufacturer part number (MPN), Global Trade Item Number (GTIN) 중 하나를 선택하여 기입한다. GTIN 의 경우엔 상품의 UPC, EAN, JAN, ISBN 중 하나를 기입한다.</p><p><span style="color: rgb(75,79,86);"><span style="color: rgb(23,43,77);">Example: Kakao</span><br/></span></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>additional_image_link</code></span></p><p>Type: string</p></td><td><p>선택</p><p>Max characters: 500</p><p>상품 추가 이미지 URL 이다. 최대 20개까지 가능하다.</p><p>Example: <code><a href="https://www.kakao.com/t_shirt_2.jpg,https://www.kakao.com/t_shirt_3.jpg" class="external-link" rel="nofollow">https://www.kakao.com/t_shirt_2.jpg,https://www.kakao.com/t_shirt_3.jpg</a></code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>age_group</code></span></p><p>Type: string</p></td><td><p>선택</p><p>상품을 사용하는 연령 그룹이다.</p><p>지원하는 값: <code>adult</code>, <code>all ages</code>, <code>teen</code>, <code>kids</code>, <code>toddler</code>, <code>infant</code>, <code>newborn</code></p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>gender</code></span></p><p>Type: string</p></td><td><p>선택</p><p><span>상품을 사용하는 성별이다.</span></p><p>지원하는 값: <code>female</code>, <code>male</code>, <code>unisex</code>. (제약으로 막고 있지는 않음)</p></td></tr><tr><td><p><span style="color: rgb(51,153,102);"><code>item_group_id</code></span></p><p>Type: string</p></td><td><p>선택</p><p>Max characters: 50</p><p>상품 그룹 ID 이다. <span>상품 그룹 ID 가 동일한 상품들은 동일한 상품 그룹으로 묶인다.</span></p><p>Example: Kakao<code>1234_shirts</code></p></td></tr><tr><td colspan="1"><p><span style="color: rgb(51,153,102);"><code>google_product_category</code></span></p><p>Type: string</p></td><td colspan="1"><p>선택</p><p>상품에 대한 Google product category (GPC) 값이다. 상품 분류 체계 경로나 ID 를 입력 가능하다.</p><p>Example: <code>Apparel &amp; Accessories &gt; Clothing &gt; Shirts &amp; Tops</code> or <code>212</code></p></td></tr><tr><td colspan="1"><p><span style="color: rgb(51,153,102);"><code>sale_price</code></span></p><p>Type: string</p></td><td colspan="1"><p>선택</p><p>할인 가격과 통화이다. <span>상품과 갸격 사이에 공백을 두는 3-digit ISO currency code </span><a href="https://ko.wikipedia.org/wiki/ISO_4217" class="external-link" rel="nofollow">(ISO 4217 standards)</a><span> 를 따른다. 소수점으로 &quot;.&quot; 을 사용한다. </span><span style="color: rgb(51,51,51);">소수점 이하 둘째짜리까지</span><span> 허용한다.</span></p><p>Example: <code>7.99 USD</code></p></td></tr></tbody></table>
+
+      </div>
+    </section>
+
+
+  </article>
+</div>
+<section class="footer">
+  <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
+  
+</section>
+
+<script src="js/adfit-custom.js"></script>
+</body>
+</html>

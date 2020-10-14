@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kakao 픽셀 가이드 - 검색 이벤트 전송</title>
+  <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jazzy.js" defer></script>
+  
+  <script src="js/lunr.min.js" defer></script>
+  <script src="js/typeahead.jquery.js" defer></script>
+  <script src="js/jazzy.search.js" defer></script>
+  <script src="js/underscore-min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-col header-col--primary">
+    <a class="header-link" href="index.html">
+      카카오 픽셀 가이드
+    </a>
+  </p>
+</header>
+
+<p class="breadcrumbs">
+  <span class="doc_title">현재 페이지</span> 
+  <img class="carat" src="img/carat.png" />
+  <span class="doc_title">검색 이벤트 전송</span> 
+</p>
+
+<div class="content-wrapper">
+  <nav class="navigation">
+    <ul class="nav-groups">
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="Documentation.html">Documentation</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="get-track-id.html">Get Track ID</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="pixel-guide.html">Pixel Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-page-view-event.html">Page View Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-complete-register-event.html">Send Complete Register Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-search-event.html">Send Search Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-content-event.html">Send View Content Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-cart-event.html">Send Add To Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-wishlist-event.html">Send Add To Wishlist Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-cart-event.html">Send View Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-purchase-event.html">Send Purchase Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-participation-event.html">Send Participation Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-signup-event.html">Send SignUp Event</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="catalog.html">Catalog Setting</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-guide.html">Catalog Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-datafeed-sample.html">Datafeed Sample</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>  <article class="main-content">
+
+    <section class="section">
+      <div class="section-content">
+        
+        <h2 id='장바구니-추가-이벤트-전송' class='heading'>검색 이벤트 전송</h2>
+
+<ul>
+<li>검색을 완료한 페이지에 삽입하는 것을 권장합니다.</li>
+<li>검색키워드를 추가하면 광고효율을 높이는데 도움이 됩니다.</li>
+</ul>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">검색키워드를 추가하는 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').search({
+        keyword: '검색키워드 입력'
+      });
+</script></xmp></code></pre>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">검색키워드+태그를 추가하는 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').search({
+        keyword: '검색키워드 입력',
+        tag: '태그값 입력'
+      });
+</script></xmp></code></pre>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">이벤트만 사용하는 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').search();
+</script></xmp></code></pre>
+
+      </div>
+    </section>
+
+
+  </article>
+</div>
+<section class="footer">
+  <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
+  
+</section>
+
+<script src="js/adfit-custom.js"></script>
+</body>
+</html>

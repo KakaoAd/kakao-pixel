@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kakao 픽셀 가이드 - 카탈로그 상세 설정</title>
+  <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jazzy.js" defer></script>
+  
+  <script src="js/lunr.min.js" defer></script>
+  <script src="js/typeahead.jquery.js" defer></script>
+  <script src="js/jazzy.search.js" defer></script>
+  <script src="js/underscore-min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-col header-col--primary">
+    <a class="header-link" href="index.html">
+      카카오 픽셀 가이드
+    </a>
+  </p>
+</header>
+
+<p class="breadcrumbs">
+  <span class="doc_title">현재 페이지</span> 
+  <img class="carat" src="img/carat.png" />
+  <span class="doc_title">카탈로그 상세 설정</span> 
+</p>
+
+<div class="content-wrapper">
+  <nav class="navigation">
+    <ul class="nav-groups">
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="Documentation.html">Documentation</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="get-track-id.html">Get Track ID</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="pixel-guide.html">Pixel Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-page-view-event.html">Page View Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-complete-register-event.html">Send Complete Register Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-search-event.html">Send Search Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-content-event.html">Send View Content Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-cart-event.html">Send Add To Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-wishlist-event.html">Send Add To Wishlist Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-cart-event.html">Send View Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-purchase-event.html">Send Purchase Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-participation-event.html">Send Participation Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-signup-event.html">Send SignUp Event</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="catalog.html">Catalog Setting</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-guide.html">Catalog Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-datafeed-sample.html">Datafeed Sample</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>  <article class="main-content">
+
+    <section class="section">
+      <div class="section-content">
+        
+        <h1 id='strong-kakaoad-sdk-strong' class='heading'><strong>카탈로그 상세 설정</strong></h1>
+
+<blockquote>
+<p>이 가이드는 카카오 픽셀을 통한 카탈로그 소재 설정에 필요한 상세 가이드를 제공합니다. </p>
+</blockquote>
+<h2 class='heading'>OpenGraph</h2>
+
+<ul>
+<li>픽셀&SDK를 통한 상품정보 수집은 픽셀에서 발생하는 '컨텐츠/상품 조회' 이벤트를 통해 이뤄집니다. 이벤트를 통해 상품이 정상적으로 사용되기 위해서는 아래 제공된 OpenGraph 가이드에 맞춰 상품 페이지가 설정되어 있어야 합니다.
+</li>
+</ul>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">OpenGraph 예</h5>
+<pre class="highlight javascript"><code><xmp><meta property="og:title" content="Kakao Product">
+<meta property="og:description" content="Kakao Product Description">
+<meta property="og:url" content="https://www.daum.net">
+<meta property="og:image" content="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+<meta property="product:brand" content="KAKAO">
+<meta property="product:availability" content="in stock">
+<meta property="product:condition" content="new">
+<meta property="product:price:amount" content="10000">
+<meta property="product:price:currency" content="KRW"></xmp></code></pre>
+
+<h2 class='heading'>OpenGraph 항목 설명</h2>
+
+<table><colgroup><col style="width: 20%;"/><col style="width: 20%;"/><col style="width: 25%;"/><col style="width: 5%;"/><col style="width: 30%;"/><col/></colgroup>
+  <tbody>
+    <tr><th>이름</th><th colspan="1">설명</th><th colspan="1"><p>필수 여부(<em style="letter-spacing: 0.0px;">O : Required, </em><em style="letter-spacing: 0.0px;">△ : Optional)</em></p></th><th colspan="1">길이</th><th colspan="1">비고</th></tr>
+    <tr><td><p>og:title</p></td><td colspan="1"><p>상품 이름</p></td><td colspan="1"><p><span>O</span></p></td><td style="text-align: center;" colspan="1"><p>255</p></td><td colspan="1"><br/></td></tr>
+    <tr><td><p>og:description</p></td><td colspan="1"><p>상품 설명</p></td><td colspan="1"><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;" colspan="1"><p>500</p></td><td colspan="1"><br/></td></tr>
+<tr><td><p>og:url</p></td><td colspan="1"><p>상품 페이지 URL</p></td><td colspan="1"><p><span>O</span></p></td><td style="text-align: center;" colspan="1"><p>1000</p></td><td colspan="1"><br/></td></tr>
+<tr><td><p>og:image</p></td><td colspan="1"><p>상품 이미지 URL</p></td><td colspan="1"><p><span>O</span></p></td><td style="text-align: center;" colspan="1">500</td><td colspan="1">500x500 이상, 400KB 미만인 경우에만 소재 제작에 활용 가능, 수집 제한 용량 : 8MB</td></tr>
+<tr><td colspan="1"><p>og:site_name</p></td><td colspan="1"><p>쇼핑몰 이름</p></td><td colspan="1"><p><span style="color: rgb(77,81,86);"><span style="color: rgb(77,81,86);">△</span> </span></p></td><td style="text-align: center;" colspan="1">100</td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:brand</p></td><td colspan="1"><p>상품 브랜드 이름</p></td><td colspan="1"><p><span style="color: rgb(77,81,86);"><span style="color: rgb(77,81,86);">△</span> </span></p></td><td style="text-align: center;" colspan="1">50</td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:availability</p></td><td colspan="1"><p>상품 유효성: <code>in stock</code><span style="color: rgb(75,79,86);">, </span><code>out of stock</code><span style="color: rgb(75,79,86);">, </span><code>preorder</code><span style="color: rgb(75,79,86);">, </span><code>available for order</code><span style="color: rgb(75,79,86);">, </span><code>discontinued</code></p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1">-</td><td colspan="1"><p><span>품절 여부를 통한 광고 사용 유무 판단</span></p></td></tr>
+<tr><td><p>product:category</p></td><td colspan="1"><p>카테고리</p></td><td colspan="1"><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;" colspan="1">-</td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:condition</p></td><td colspan="1"><p>상품 상태: <code>new</code><span style="color: rgb(75,79,86);">, </span><code>refurbished</code><span style="color: rgb(75,79,86);">, </span><code>used</code></p></td><td colspan="1"><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;" colspan="1">-</td><td colspan="1"><br/></td></tr>
+<tr><td colspan="1"><p>product:age</p></td><td colspan="1"><p>연령</p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:gender</p></td><td colspan="1"><p>성별: <code>Female</code><span style="color: rgb(75,79,86);">, </span><code>Male</code><span style="color: rgb(75,79,86);">, </span><code>Unisex</code></p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:item_group_id</p></td><td colspan="1"><p><span style="color: rgb(75,79,86);">한 상품에 대한 여러 변형들의 ID </span></p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1">50</td><td colspan="1"><p><span style="color: rgb(75,79,86);"><span>여러 변형 상품이 하나의 카탈로그 소재에 포함되는 경우를 방지 가능.</span><br/></span></p><p><span style="color: rgb(75,79,86);">다이나믹 광고를 만들 때, 그룹에서 한 아이템만 골라서 사용한다.</span></p><p><span style="color: rgb(75,79,86);">(하늘색 폴로 셔츠는 폴로 셔츠의 변형) </span></p></td></tr>
+<tr><td colspan="1"><p>product:price:amount</p></td><td colspan="1"><p>현재 가격 (구분자로 ',' 대신 '.' 사용, &quot;$&quot; 사용 X)</p><p>예시: 1500.00</p></td><td colspan="1"><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td colspan="1"><p>product:price:currency</p></td><td colspan="1"><p>ISO 규격 통화 (예시: KRW)</p></td><td colspan="1"><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td colspan="1"><p>product:sale_price:amount</p></td><td colspan="1"><p>세일 가격</p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td colspan="1"><p>product:sale_price:currency</p></td><td colspan="1"><p>세일 가격 통화</p></td><td colspan="1"><p><span style="color: rgb(77,81,86);">△</span></p></td><td style="text-align: center;" colspan="1"><span>-</span></td><td colspan="1"><br/></td></tr>
+<tr><td><p>product:retailer_item_id</p></td><td><p><span style="color: rgb(75,79,86);">상품의 고유 ID</span></p></td><td><p><span><span style="color: rgb(77,81,86);">△</span><br/></span></p></td><td style="text-align: center;">50</td><td><p>이 정보는 픽셀&amp;SDK로 전달되는 content_id로 대체된다.</p></td></tr>
+</tbody></table>
+
+
+      </div>
+    </section>
+
+
+  </article>
+</div>
+<section class="footer">
+  <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
+  
+</section>
+
+<script src="js/adfit-custom.js"></script>
+</body>
+</html>

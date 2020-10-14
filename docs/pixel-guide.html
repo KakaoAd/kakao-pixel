@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kakao 픽셀 가이드</title>
+  <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jazzy.js" defer></script>
+  
+  <script src="js/lunr.min.js" defer></script>
+  <script src="js/typeahead.jquery.js" defer></script>
+  <script src="js/jazzy.search.js" defer></script>
+  <script src="js/underscore-min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-col header-col--primary">
+    <a class="header-link" href="index.html">
+      카카오 픽셀 가이드
+    </a>
+  </p>
+</header>
+
+<p class="breadcrumbs">
+  <span class="doc_title">현재 페이지</span> 
+  <img class="carat" src="img/carat.png" />
+  <span class="doc_title">픽셀 기본 사항 안내</span> 
+</p>
+
+<div class="content-wrapper">
+  <nav class="navigation">
+    <ul class="nav-groups">
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="Documentation.html">Documentation</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="get-track-id.html">Get Track ID</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="pixel-guide.html">Pixel Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-page-view-event.html">Page View Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-complete-register-event.html">Send Complete Register Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-search-event.html">Send Search Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-content-event.html">Send View Content Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-cart-event.html">Send Add To Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-wishlist-event.html">Send Add To Wishlist Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-cart-event.html">Send View Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-purchase-event.html">Send Purchase Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-participation-event.html">Send Participation Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-signup-event.html">Send SignUp Event</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="catalog.html">Catalog Setting</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-guide.html">Catalog Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-datafeed-sample.html">Datafeed Sample</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>  <article class="main-content">
+
+    <section class="section">
+      <div class="section-content">
+        <h1 id='strong-kakaoad-sdk-strong' class='heading'><strong>픽셀 기본 사항 안내</strong></h1>
+
+<blockquote>
+<p>카카오 픽셀에 관련된 기본 사항을 안내합니다.</p>
+</blockquote>
+<h2 id='기본 수집 항목' class='heading'>기본 수집 항목</h2>
+
+<ul>
+<li>카카오 픽셀을 통해 수집하는 항목은 다음과 같습니다.
+
+<ul>
+<li>ad.daum.net에서 발급한 쿠키에 포함한 비식별화된 식별값</li>
+<li>이벤트 종류 및 태그</li>
+<li>픽셀이 작동한 웹페이지 URL</li>
+<li>픽셀이 작동한 웹페이지로 이동하기 전 URL</li>
+<li>IP 주소</li>
+<li>브라우저 User Agent</li>
+</ul></li>
+</ul>
+
+<h2 id='데이터 전송 확인 방법' class='heading'>데이터 전송 확인 방법</h2>
+<ul>
+<li>픽셀&SDK 관리페이지 내에서 이벤트별 목록 옆에 아래와 같이 "수집중" 이라고 표시되면 정상 데이터가 수집중입니다.</li>
+<img src="collect.png" />
+<li>"수집중" 녹색 텍스트를 클릭하시면 아래와 같이 최근 수집된 100건의 이벤트 목록을 확인할 수 있습니다.</li>
+<img src="collect2.png" />
+</ul>
+
+<h2 id='지원환경' class='heading'>태그 추가</h2>
+<ul>
+<li>픽셀&SDK 관리페이지 내에서 "+태그 발급하기" 버튼을 눌러 이벤트 하위에 상세한 추가 설정을 할 수 있습니다.</li>
+<li>태그는 카카오모먼트 광고그룹 내에서 '맞춤타겟 > 내 데이터 > 픽셀&SDK' 항목으로 타겟팅에 사용할 수 있습니다.</li>
+<li>픽셀로 보내는 이벤트에 '태그'를 추가하여 보내는 경우, 이벤트의 타겟모수와 이벤트 하위 태그의 타겟모수에도 함께 포함합니다.</li>
+<li>"+태그 발급하기"로 추가하지 않은 '태그'를 스크립트 내에 추가하여 전송하는 경우, 이벤트의 타겟모수에만 모수로 포함합니다.</li>
+</ul>
+
+
+      </div>
+    </section>
+
+  </article>
+</div>
+<section class="footer">
+  <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
+  
+</section>
+
+<script src="js/adfit-custom.js"></script>
+</body>
+</html>

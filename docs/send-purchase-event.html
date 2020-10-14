@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kakao 픽셀 가이드 - 구매 이벤트 전송</title>
+  <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+  <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+  <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/jazzy.js" defer></script>
+  
+  <script src="js/lunr.min.js" defer></script>
+  <script src="js/typeahead.jquery.js" defer></script>
+  <script src="js/jazzy.search.js" defer></script>
+  <script src="js/underscore-min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-col header-col--primary">
+    <a class="header-link" href="index.html">
+      카카오 픽셀 가이드
+    </a>
+  </p>
+</header>
+
+<p class="breadcrumbs">
+  <span class="doc_title">현재 페이지</span> 
+  <img class="carat" src="img/carat.png" />
+  <span class="doc_title">구매 이벤트 전송</span> 
+</p>
+
+<div class="content-wrapper">
+  <nav class="navigation">
+    <ul class="nav-groups">
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="Documentation.html">Documentation</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="get-track-id.html">Get Track ID</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="pixel-guide.html">Pixel Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-page-view-event.html">Page View Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-complete-register-event.html">Send Complete Register Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-search-event.html">Send Search Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-content-event.html">Send View Content Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-cart-event.html">Send Add To Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-add-to-wishlist-event.html">Send Add To Wishlist Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-view-cart-event.html">Send View Cart Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-purchase-event.html">Send Purchase Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-participation-event.html">Send Participation Event</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="send-signup-event.html">Send SignUp Event</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group-name">
+        <a class="nav-group-name-link" href="catalog.html">Catalog Setting</a>
+        <ul class="nav-group-tasks">
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-guide.html">Catalog Guide</a>
+          </li>
+          <li class="nav-group-task">
+            <a class="nav-group-task-link" href="catalog-datafeed-sample.html">Datafeed Sample</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>  <article class="main-content">
+
+    <section class="section">
+      <div class="section-content">
+        
+        <h2 id='장바구니-추가-이벤트-전송' class='heading'>구매 이벤트 전송</h2>
+
+<ul>
+<li>구매를 완료한 웹페이지에 설치하는 것을 권장합니다.</li>
+<li>상세 주문내역을 추가하면 광고효율을 높이는데 도움이 됩니다.</li>
+<li>구매금액을 전송하면 카카오모먼트 보고서에서 전환금액을 함께 표시할 수 있습니다.</li>
+<li>currency 항목에는 ISO 4217 기준의 3문자 통화코드를 입력합니다.</li>
+</ul>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">구매 관련 모든 항목을 추가한 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').purchase({
+        total_quantity: "3", // 주문 내 상품 개수(optional)
+        total_price: "500",  // 주문 총 가격(optional)
+        currency: "KRW",     // 주문 가격의 화폐 단위(optional, 기본 값은 KRW)
+        products: [          // 주문 내 상품 정보(optional)
+            { id: "상품고유값 입력", name: "상품명1", quantity: "2", price: "200"},
+            { id: "상품고유값 입력", name: "상품명2", quantity: "1", price: "100"}
+        ]
+    });
+</script></xmp></code></pre>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">구매 관련 모든 항목 + 태그를 추가한 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').purchase({
+        total_quantity: "3", // 주문 내 상품 개수(optional)
+        total_price: "500",  // 주문 총 가격(optional)
+        currency: "KRW",     // 주문 가격의 화폐 단위(optional, 기본 값은 KRW)
+        products: [          // 주문 내 상품 정보(optional)
+            { id: "상품고유값 입력", name: "상품명1", quantity: "2", price: "200"},
+            { id: "상품고유값 입력", name: "상품명2", quantity: "1", price: "100"}
+        ],
+        tag: '태그값입력'
+    });
+</script></xmp></code></pre>
+
+<h5 class="tab-title" data-tab-name="add-to-cart-request">이벤트만 사용하는 경우</h5>
+<pre class="highlight javascript"><code><xmp><script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+      kakaoPixel('Track ID 입력').pageView();
+      kakaoPixel('Track ID 입력').purchase();
+</script></xmp></code></pre>
+
+
+
+
+  </article>
+</div>
+<section class="footer">
+  <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
+  
+</section>
+
+<script src="js/adfit-custom.js"></script>
+</body>
+</html>
