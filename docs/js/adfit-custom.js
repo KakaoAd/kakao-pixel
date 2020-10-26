@@ -33,18 +33,18 @@ window.addEventListener('load', function() {
     "Page View Event": "방문 이벤트 전송",
     "Project Setting": "프로젝트 설정",
     "Start Event Tracker": "트랙 ID 설정 및 이벤트 트래커 활성화",
-    "Send Complete Register Event": "가입완료 이벤트 전송",
+    "Send Complete Register Event": "회원가입 이벤트 전송",
     "Send View Cart Event": "장바구니 보기 이벤트 전송",
     "Send View Content Event": "콘텐츠 / 상품 조회 이벤트 전송",
     "Send Search Event": "검색 이벤트 전송",
     "Send Purchase Event": "구매 이벤트 전송",
     "Send Participation Event": "잠재고객 이벤트 전송",
-    "Send SignUp Event": "가입 및 등록 이벤트 전송",
+    "Send SignUp Event": "서비스신청 이벤트 전송",
     "Send Add To Cart Event": "장바구니 추가 이벤트 전송",
     "Send Add To Wishlist Event": "관심상품 추가 이벤트 전송",
     "Catalog Setting": "카탈로그 설정",
-    "Catalog Guide": "카탈로그 상세 설정",
-    "Datafeed Sample": "데이터피드 샘플"
+    "Catalog Guide": "OG 태그로 연동하기",
+    "Datafeed Sample": "XML 파일로 연동하기"
   };
   var elems = document.querySelectorAll('.navigation a, .doc_title');
   elems.forEach(function(elem) {
@@ -59,7 +59,7 @@ window.addEventListener('load', function() {
     sectionNameElem.style.display = 'none';
   }
 
-  // 3. swift, objective-c 샘플 코드를 탭 UI로 변환.  
+  // 3. swift, objective-c 샘플 코드를 탭 UI로 변환.
   var tabTitles = document.querySelectorAll('.tab-title');
   var tabItems = _.map(tabTitles, function(titleElem) {
     return {
@@ -70,7 +70,7 @@ window.addEventListener('load', function() {
   var tabGroups = _.groupBy(tabItems, function(item) {
     return item.title.getAttribute('data-tab-name');
   });
-  
+
   _.each(tabGroups, function(group) {
     var firstElem = _.first(group).title;
     if (!!firstElem) {

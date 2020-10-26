@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Kakao 픽셀 가이드 - 데이터피드 샘플</title>
+  <title>Kakao 픽셀 가이드 - XML 파일로 연동하기</title>
   <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
   <link rel="stylesheet" type="text/css" href="css/highlight.css" />
   <link rel="stylesheet" type="text/css" href="css/adfit-custom.css" />
   <meta charset="utf-8">
   <script src="js/jquery.min.js" defer></script>
   <script src="js/jazzy.js" defer></script>
-  
+
   <script src="js/lunr.min.js" defer></script>
   <script src="js/typeahead.jquery.js" defer></script>
   <script src="js/jazzy.search.js" defer></script>
@@ -25,9 +25,9 @@
 </header>
 
 <p class="breadcrumbs">
-  <span class="doc_title">현재 페이지</span> 
+  <span class="doc_title">현재 페이지</span>
   <img class="carat" src="img/carat.png" />
-  <span class="doc_title">데이터피드 샘플</span> 
+  <span class="doc_title">XML 파일로 연동하기</span>
 </p>
 
 <div class="content-wrapper">
@@ -90,11 +90,11 @@
 
     <section class="section">
       <div class="section-content">
-        
-        <h1 id='strong-kakaoad-sdk-strong' class='heading'><strong>데이터피드 샘플</strong></h1>
+
+        <h1 id='strong-kakaoad-sdk-strong' class='heading'><strong>XML 파일로 연동하기</strong></h1>
 
 <blockquote>
-<p>이 가이드는 카탈로그 소재 정보 제공을 데이터피드로 설정하는 가이드를 제공합니다. </p>
+<p>이 가이드는 카탈로그 소재 정보 제공을 XML 파일로 연동하는 가이드를 제공합니다. </p>
 </blockquote>
 
 <h2 class='heading'>예시</h2>
@@ -104,50 +104,50 @@
     <title>My Deal Shop Products</title>
     <link>https://www.mydealsshop.foo</link>
     <description>Product Feed for Kakao</description>
-     
- 
+
+
         <item>
             <g:item_group_id>SKU-123123</g:item_group_id>
-            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>           
+            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>
             <g:id>SKU-123123-RED</g:id>
-            <g:title>WidgetThing</title>           
+            <g:title>WidgetThing</title>
             <g:description>This product is the product you need to do the thing</description>
             <g:link>https://www.mydealsshop.foo/products/widgetthing</link>
-            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link> 
-            
-            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>           
-            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image3.jpg</additional_image_link>      
-                             
+            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link>
+
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image3.jpg</additional_image_link>
+
             <g:brand>AcmeCo</g:brand>
-            <g:condition>New</g:condition> 
-          
+            <g:condition>New</g:condition>
+
             <g:availability>in stock</g:availability>
-            
+
             <g:price>19.99 USD</g:price>
-            <g:sale_price>9.99 USD</g:sale_price>   
-        </item> 
- 
+            <g:sale_price>9.99 USD</g:sale_price>
+        </item>
+
         <item>
             <g:item_group_id>SKU-123123</g:item_group_id>
-            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>           
+            <g:google_product_category>Toys &amp; Games > Toys > Executive Toys > Magnet Toys</g:google_product_category>
             <g:id>SKU-123123-GREEN</g:id>
-            <g:title>WidgetThing</title>           
+            <g:title>WidgetThing</title>
             <g:description>This product is the product you need to do the thing</description>
             <g:link>https://www.mydealsshop.foo/products/widgetthing</link>
-            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link> 
-             
-            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>           
+            <g:image_link>https://cdn.mycdn.foo/files/123123123.jpg</g:image_link>
+
+            <additional_image_link>https://cdn.mycdn.foo/files/123123123_image2.jpg</additional_image_link>
             <additional_image_link>https://cdn.mycdn.foo/files/123123123_image3.jpg</additional_image_link>
-                     
+
             <g:brand>AcmeCo</g:brand>
-            <g:condition>New</g:condition> 
-           
+            <g:condition>New</g:condition>
+
             <g:availability>in stock</g:availability>
-             
+
             <g:price>19.99 USD</g:price>
-            <g:sale_price>9.99 USD</g:sale_price>      
-        </item>  
- 
+            <g:sale_price>9.99 USD</g:sale_price>
+        </item>
+
 </channel>
 </rss></xmp></code></pre>
 
@@ -163,7 +163,7 @@
 </div>
 <section class="footer">
   <p>Copyright 2020 © Kakao Corp. All Rights Reserved.</p>
-  
+
 </section>
 
 <script src="js/adfit-custom.js"></script>
