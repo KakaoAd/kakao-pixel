@@ -101,6 +101,8 @@
 <ul>
 <li>픽셀&SDK를 통한 상품정보 수집은 픽셀에서 발생하는 '컨텐츠/상품 조회' 이벤트를 통해 이뤄집니다. 이벤트를 통해 상품이 정상적으로 사용되기 위해서는 아래 제공된 OpenGraph 가이드에 맞춰 상품 페이지가 설정되어 있어야 합니다.
 </li>
+<li>상품 정보를 수집하는 크롤러는 HTTP request header 로 'REF_CODE: MOMENT'를 가집니다. 봇 여부 판단 값이 필요할 때 해당 값을 참고하실 수 있습니다.
+</li>
 </ul>
 
 <h5 class="tab-title" data-tab-name="add-to-cart-request">OpenGraph 예</h5>
